@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StudyMate</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         LOGIN / REGISTER PAGE
+    ========================================= -->
+
+    <div id="authPage">
+
+        <div class="auth-container">
+
+            <div class="auth-brand">
+
+                <h1>📚 StudyMate</h1>
+
+                <p>
+                    Student Task & Study Planner
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div
+                id="loginForm"
+                class="auth-form"
+            >
+
+                <h2>Welcome Back 👋</h2>
+
+                <p class="auth-subtitle">
+                    Login to continue your studies
+                </p>
+
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email address"
+                >
+
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                >
+
+
+                <button
+                    id="loginButton"
+                    class="auth-button"
+                >
+                    Login
+                </button>
+
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <button
+                        id="showRegister"
+                        class="link-button"
+                    >
+                        Register
+                    </button>
+
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div
+                id="registerForm"
+                class="auth-form hidden"
+            >
+
+                <h2>Create Account 🚀</h2>
+
+                <p class="auth-subtitle">
+                    Create your StudyMate account
+                </p>
+
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Full name"
+                >
+
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Email address"
+                >
+
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Password"
+                >
+
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                >
+
+
+                <button
+                    id="registerButton"
+                    class="auth-button"
+                >
+                    Create Account
+                </button>
+
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <button
+                        id="showLogin"
+                        class="link-button"
+                    >
+                        Login
+                    </button>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         DASHBOARD
+    ========================================= -->
+
+    <div
+        id="dashboardPage"
+        class="hidden"
+    >
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div>
+
+                <h1>📚 StudyMate</h1>
+
+                <p>
+                    Student Task & Study Planner
+                </p>
+
+            </div>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </header>
+
+
+        <main>
+
+
+            <!-- WELCOME -->
+
+            <section class="welcome">
+
+                <h2>
+                    Good Morning,
+                    <span id="userName">
+                        Student
+                    </span>
+                    👋
+                </h2>
+
+                <p>
+                    Let's make today productive!
+                </p>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats">
+
+                <div class="card">
+
+                    <h3>Total Tasks</h3>
+
+                    <p id="totalTasks">0</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Completed</h3>
+
+                    <p id="completedTasks">0</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Pending</h3>
+
+                    <p id="pendingTasks">0</p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ADD TASK -->
+
+            <section class="tasks">
+
+                <h2>Add New Task</h2>
+
+
+                <div class="task-form">
+
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="Enter task name"
+                    >
+
+
+                    <select id="taskPriority">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected
+                        >
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        type="date"
+                        id="taskDeadline"
+                    >
+
+
+                    <button id="addTaskButton">
+                        + Add Task
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- TASK LIST -->
+
+            <section class="tasks">
+
+                <h2>Today's Tasks</h2>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchTask"
+                        placeholder="🔎 Search tasks..."
+                    >
+
+                </div>
+
+
+                <!-- FILTER -->
+
+                <div class="filter-buttons">
+
+                    <button
+                        id="allButton"
+                        class="filter-button active"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        id="pendingButton"
+                        class="filter-button"
+                    >
+                        Pending
+                    </button>
+
+
+                    <button
+                        id="completedButton"
+                        class="filter-button"
+                    >
+                        Completed
+                    </button>
+
+                </div>
+
+
+                <!-- TASK LIST -->
+
+                <ul id="taskList"></ul>
+
+            </section>
+
+
+            <!-- PROGRESS -->
+
+            <section class="progress">
+
+                <h2>Today's Progress</h2>
+
+
+                <div class="progress-bar">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+
+                <p id="progressText">
+                    0% Completed
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
